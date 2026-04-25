@@ -4,17 +4,24 @@
 #include <behaviors.dtsi>
 #include <id_tb3-layouts.dtsi>
 
-// / {
+
+/* Layers */
+
+#define DEFAULT 0
+
+
+
+ / {
     // Define a default keymap here.
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
-//    keymap {
-//        compatible = "zmk,keymap";
-//
-//        default_layer {
-//            bindings = <
-//                &kp A &kp B
-//                &kp C &kp D
-//            >;
-//        };
-//    };
-//};
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp A &kp B
+                &kp C &kp D
+            >;
+        };
+    };
+};
