@@ -21,3 +21,6 @@
 include:
   - board: nice_nano_v2
     shield: id_tb3
+  - board: nice_nano_v2
+    shield: settings_reset
+    
