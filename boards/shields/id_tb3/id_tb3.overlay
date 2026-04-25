@@ -1,0 +1,14 @@
+// This file was generated from a template. Edit it to match your keyboard.
+// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
+// instructions.
+
+
+
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include "id_tb3-layouts.dtsi"
+
+
+&encoder {
+    status = "okay";
+};

@@ -1,0 +1,6 @@
+if SHIELD_ID_TB3
+
+config ZMK_KEYBOARD_NAME
+    default "tb3"
+
+endif # SHIELD_ID_TB3

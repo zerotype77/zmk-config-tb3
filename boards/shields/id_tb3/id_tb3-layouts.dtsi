@@ -1,0 +1,61 @@
+//  https://github.com/slabua/zmk-config-saru48wplus/blob/master/boards/shields/saru48wplus/saru48wplus.dtsi
+// saru48plus 키보드에서 가져와서 수정함.
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/zmk/bt.h>
+// #include <dt-bindings/zmk/keys.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix_transform = &default_transform;
+        zmk,battery = &vbatt;
+    };
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
+    };
+
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+
+        col-gpios
+            = <&gpio0 7 GPIO_ACTIVE_HIGH>
+            , <&gpio0 8 GPIO_ACTIVE_HIGH>
+            , <&gpio0 9 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <3>;
+        rows = <2>;
+
+        map = <
+            RC(0,0) RC(0,1) RC(0,2)
+            RC(1,0) RC(1,1) RC(1,2)
+        >;
+    };
+
+//    encoder: encoder {
+//        compatible = "alps,ec11";
+//        a-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+//        b-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+//        steps = <80>;
+//        status = "enabled";
+//    };
+
+//    sensors: sensors {
+//        compatible = "zmk,keymap-sensors";
+//        sensors = <&encoder>;
+//        triggers-per-rotation = <20>;
+//    };
+
+
+};
